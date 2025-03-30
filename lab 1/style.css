@@ -1,0 +1,260 @@
+/* Загальні стилі */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Хедер */
+header {
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 0 0 60px 60px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.8em;
+    font-weight: bold;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+/* Навігація */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transition: all 0.5s ease
+}
+
+/* Основний контент */
+main {
+    width: 80%;
+    margin: 40px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Розділи */
+section {
+    padding-bottom: 25px;
+}
+
+h2 {
+    color: #2E7D32;
+    border-bottom: 3px solid #4CAF50;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    line-height: 1.1;
+}
+.custom-list {
+    list-style: none;
+    padding: 0;
+}
+
+.custom-list li {
+    display: flex;
+    align-items: center;
+    background: #ddf9e3;
+    padding: 10px 15px;
+    border-radius: 10px; /* Заокруглення */
+    margin-bottom: 10px;
+    font-size: 16px;
+    width: auto; /* Ширина підлаштовується під вміст */
+}
+
+.custom-list .icon {
+    font-size: 20px;
+    margin-right: 10px; /* Відступ між іконкою та текстом */
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Дозволяє адаптивне перенесення */
+}
+
+.about-text {
+    flex: 1; /* Займає всю доступну ширину */
+    min-width: 300px; /* Гарантія, що текст не буде занадто вузьким */
+}
+
+/* Футер */
+footer {
+    background: #222;
+    color: #ddd;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Стилі для карток */
+.goal-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.goal-card {
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 350px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.goal-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.goal-image {
+    width: 100%;
+    height: 175px;
+    object-fit: cover;
+    border-bottom: 3px solid #4CAF50;
+}
+
+.goal-info {
+    padding: 15px;
+}
+
+.goal-info h3 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    text-align: center; /* Центруємо назву */
+    line-height: 1.25;
+}
+
+.goal-description {
+    font-size: 1em;
+    margin-bottom: 15px;
+    color: #555;
+    line-height: 1.25; /* Зменшуємо відстань між рядками */
+    text-align: justify;
+}
+
+.goal-deadline {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #2E7D32;
+}
+
+/* Для планшетів (до 1024px) */
+@media (max-width: 1024px) {
+    main {
+        width: 90%;
+        padding: 15px;
+    }
+
+    header {
+        padding: 30px 15px;
+    }
+
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    header p {
+        font-size: 1.1em;
+    }
+
+    .about-container {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+/* Для мобільних пристроїв (до 768px) */
+@media (max-width: 768px) {
+    main {
+        width: 95%;
+    } 
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul li a {
+        display: block;
+        text-align: center;
+    }
+
+    .about-text {
+        max-width: 90%;
+    }
+
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .goal-cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .goal-card {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}
