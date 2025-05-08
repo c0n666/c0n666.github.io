@@ -1,0 +1,199 @@
+/* Загальні стилі */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', 'Poppins', sans-serif;    
+    margin: 0;
+    padding: 0;
+    background-color: #D5F0D9;
+    color: #333;
+    line-height: 1.6;
+    height: 100%;
+}
+
+.styled-header {
+    padding: 15px;
+    margin: 0;
+    color: #333;
+    background-color: #D5F0D9;
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Зменшено прозорість тіні */
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.logo-nav-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 35px;
+    margin-right: 20px;
+}
+
+.nav-menu ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.3s ease;
+}
+
+.menu-link:hover {
+    background-color: #296248;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* Кнопки "Реєстрація", "Вхід", мова */
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.auth-button {
+    padding: 8px 14px;
+    background-color: #296248;  /* Плантація */
+    color: white;
+    border: none;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.3s ease;
+}
+
+.auth-button:hover {
+    background-color: #3C8A67;
+    transform: scale(1.05);
+}
+
+/* Кнопка меню (бургер) */
+.burger-button {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+}
+
+  .profile-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+ /* Стиль для іконки профілю */
+.profile-icon {
+    margin-top: 7px;
+    color: #296248;  /* Використовуємо основний колір з вашої палітри */
+    text-decoration: none;
+    transition: transform 0.2s ease, color 0.3s ease;  /* Додаємо плавний перехід для кольору */
+  }
+  
+  .profile-icon:hover {
+    transform: scale(1.1);  /* Анімація збільшення */
+    color: #51B687;  /* Використовуємо другий колір для активного стану */
+  }
+  
+  /* Стиль для іконки "Вийти" */
+  .logout-icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .logout-icon-button:hover {
+    background-color: #B5E0C4;  /* Використовуємо світло-зелений фон з палітри */
+    transform: scale(1.1);  /* Анімація збільшення */
+  }
+  
+  .logout-icon-button svg {
+    color: #296248;  /* Використовуємо основний темно-зелений колір для іконки */
+  }
+  
+  .logout-icon-button:hover svg {
+    color: #51B687;  /* Зміна кольору іконки на світло-зелений при наведенні */
+  }  
+  
+/* Мобільна версія */
+@media (max-width: 768px) {
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 10px;
+        background-color: #D5F0D9;  /* М'ятний фон для мобільного меню */
+        padding: 10px;
+        position: absolute;
+        top: 70px;
+        left: 10px;
+        z-index: 999;
+        display: none;
+        border-radius: 8px;
+        width: 100%;
+    }
+
+    .nav-menu.visible ul {
+        display: flex;
+    }
+
+    .burger-button {
+        display: block;
+        color: #333;  /* Темний колір для кнопки бургер */
+    }
+    
+    /* Стиль для кнопки реєстрації */
+    .register-btn {
+        background: linear-gradient(135deg, #51B687, #92D1AE); /* Градієнт для реєстрації */
+        border-radius: 8px;
+        transition: background 0.3s ease;
+    }
+
+    .register-btn:hover {
+        background: linear-gradient(135deg, #71C099, #B5E0C4); /* Градієнт на ховер */
+    }
+
+    /* Покращення бургер-меню */
+    .burger-button:focus {
+        outline: none;
+    }
+    
+    /* Покращення видимості меню при активації */
+    .nav-menu ul {
+        display: none;
+    }
+
+    .nav-menu.visible ul {
+        display: flex;
+    }
+}

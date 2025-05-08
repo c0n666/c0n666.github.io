@@ -1,0 +1,225 @@
+/* Фон секції Home */
+#home {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #296248, #D5F0D9); /* Плантація → М'ятний */
+  min-height: 100vh;
+  padding: 0px;
+  font-family: 'Inter', 'Poppins', sans-serif;
+  color: #000;
+}
+
+/* Контейнер основного блоку */
+.home-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: transparent;
+  border-radius: 15px;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.home-container h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #FFFFFF;
+  text-transform: none;
+  letter-spacing: 1px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.home-container h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 5rem;
+  color: #FFFFFF;
+  font-weight: 700;
+  text-transform: none;
+  animation: slideIn 1s ease-out;
+  margin: 5px;
+}
+
+.home-container span {
+  font-family: "Montserrat", Sans-serif;
+  font-size: 0.9rem;
+  color: #296248;
+  font-weight: 400;
+  opacity: 0.95;
+  display: block;
+}
+
+/* Стилізація зображення */
+.home-image {
+  width: 100%;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.home-image img {
+  width: 70%;
+  max-width: 700px;
+  height: auto;
+  border-radius: 100px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  animation: imageFadeIn 1.5s ease-in-out forwards;
+}
+
+/* Секція з переліком особливостей */
+.features-section {
+  padding: 20px 20px;
+  background: transparent; /* фон секції змінено на прозорий */
+  text-align: center;
+}
+
+.features-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #296248; /* базовий акцент із палітри */
+  margin-bottom: 40px;
+}
+
+/* Сітка: 3 картки в ряд, що при 6 елементах утворюють 2 рядки */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* точно 3 колонки */
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Стилізація картки перелічуваних елементів */
+.feature-card {
+  background: transparent; /* білий фон прибрано, колір задається лише через тінь та інші стилі */
+  border-radius: 12px;
+  /* border-top тепер задається індивідуально через inline style у компоненті Home */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 24px;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.25), inset 0 -3px 0 rgba(0,0,0,0.15);
+}
+
+/* Контейнер для емоджі та заголовку картки */
+.feature-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;  /* відступ між емоджі та заголовком */
+  margin-bottom: 10px;
+}
+
+/* Оформлення емоджі */
+.feature-icon {
+  font-size: 28px;
+}
+
+.feature-card {
+  background: #296248; /* темний фон з палітри */
+  color: #FFFFFF; /* світлий текст */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+/* Заголовок і опис картки */
+.feature-card h3 {
+  font-size: 18px;
+  color: #FFFFFF; /* світлий заголовок */
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  font-size: 15px;
+  color: #E0F2EA; /* світло-зелений відтінок для тексту, можна замінити на #FFFFFF */
+}
+
+
+/* Анімації */
+@keyframes imageFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Стилі футера */
+.footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.footer .footer-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #000;
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.footer .footer-text span:before {
+  content: '✅';
+  font-size: 1.2rem;
+}
+
+/* Стилізація CTA-кнопки */
+.cta-button {
+  display: inline-block;
+  padding: 14px 24px;
+  margin: 40px;
+  background: linear-gradient(135deg, #296248, #71C099);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 12px;
+  box-shadow:
+    0 8px 16px rgba(0, 0, 0, 0.2),
+    inset 0 -2px 0 rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.cta-button:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.25),
+    inset 0 -3px 0 rgba(0,0,0,0.15);
+  background: linear-gradient(135deg, #71C099, #92D1AE);
+}
+
+@media (max-width: 768px) {
+  .home-container {
+      padding: 20px;
+  }
+
+  .home-container h2 {
+      font-size: 2.2rem;
+  }
+
+  .home-image {
+      margin: 20px 0;
+  }
+  
+  .home-image img {
+      border-radius: 8px;
+  }
+}

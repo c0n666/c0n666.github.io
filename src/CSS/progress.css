@@ -1,0 +1,38 @@
+/* progress.css */
+
+.progress-page {
+  max-width: 600px;
+  margin: 100px auto;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.progress-title {
+  font-size: 52px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 40px;
+}
+
+.progress-chart-container {
+  width: 350px;
+  height: 350px;
+  margin: 0 auto 30px auto;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  background: linear-gradient(145deg, #f4f4f4, #dddddd);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-motivation {
+  font-size: 20px;
+  color: #296248;
+  background-color: #d5f0d9;
+  padding: 12px 20px;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
