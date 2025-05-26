@@ -1,0 +1,160 @@
+/* Загальні стилі календаря */
+.calendar-page {
+    padding: 40px;
+    background: linear-gradient(135deg, #296248, #D5F0D9);
+    min-height: 100vh;
+    font-family: 'Inter', 'Poppins', sans-serif;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.calendar-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.calendar-content h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Фільтр за статусом */
+.filter-container {
+    text-align: center;
+    margin: 30px auto 20px auto; /* Додано відступ зверху (20px) та знизу (20px) */
+}
+
+.filter-container label {
+    font-size: 1.1rem;
+    margin-right: 10px;
+    color: #fff;
+}
+
+.filter-container select {
+    font-size: 1rem;
+    padding: 8px 15px;
+    border-radius: 8px;
+    border: none;
+    background: #296248;
+    color: #B5E0C4;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: background 0.3s ease, transform 0.2s ease, color 0.3s ease;
+}
+
+/* Календар */
+.rbc-calendar {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Події */
+.rbc-event {
+    background: #51B687 !important;
+    color: #fff !important;
+    font-weight: 500;
+    border-radius: 8px !important;
+    padding: 5px;
+}
+
+.rbc-event:hover {
+    background: #71C099 !important;
+}
+
+/* Виділення поточного дня */
+.rbc-today {
+    background: rgba(81, 182, 135, 0.2) !important;
+}
+
+/* Приховуємо колонку з часом: лише gutter і header, але НЕ контент подій */
+.rbc-time-gutter,
+.rbc-time-header {
+    display: none !important;
+}
+
+
+.rbc-toolbar .rbc-btn-group {
+    display: flex;
+    gap: 10px;
+}
+
+.rbc-toolbar button {
+    background-color: #B5E0C4;
+    color: #296248;
+    border: none;
+    padding: 8px 16px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.rbc-toolbar button:focus {
+    outline: none;
+}
+
+.rbc-toolbar button:hover:not(:disabled) {
+    background-color: #51B687;
+    transform: scale(1.05);
+    color: #fff;
+}
+
+.rbc-toolbar button[disabled],
+.rbc-toolbar button[aria-disabled="true"] {
+    background-color: #296248;
+    color: #fff;
+    cursor: default;
+}
+
+/* Панель інструментів календаря */
+.rbc-toolbar {
+    position: relative;  /* Дозволяє нам позиціонувати внутрішні абсолютні елементи */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+/* Позиціювання дати – переміщуємо її в верхній правий кут тулбара */
+.rbc-toolbar-label {
+    position: absolute;
+    top: 8px;       /* відступ зверху */
+    right: 16px;    /* відступ від правого краю */
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #296248;
+}
+
+/* Додаткові стилі для опису подій */
+.rbc-event .rbc-event-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .goal-description {
+    font-size: 0.75rem;
+    color: #e6f6ef;
+    margin-top: 4px;
+    font-weight: 400;
+    line-height: 1.2;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }

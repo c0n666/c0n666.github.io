@@ -1,0 +1,225 @@
+/* =========== Палітра =========== */
+:root {
+  --primary-dark: #296248;
+  --primary:      #51B687;
+  --secondary:    #71C099;
+  --light-bg:     #D5F0D9;
+  --card-bg:      #FFFFFF;
+  --text:         #333333;
+  --muted:        #666666;
+}
+
+/* Забезпечення повноекранного центрування */
+.profile-page {
+  min-height: 100vh;               
+  display: flex;
+  flex-direction: row;             
+  justify-content: center;         
+  align-items: center;             
+  padding: 25px;                /* трохи збільшено */
+  gap: 50px;                    /* збільшено проміжок */
+}
+
+/* Контейнер для контенту профіля */
+.profile-content {
+  flex: 0 0 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+/* Контейнер для зображення */
+.profile-image-container {
+  flex: 0 0 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+/* Стилізація зображення: розтягування по ширині контейнера */
+.profile-image-container img {
+  width: 85%;                  /* збільшено з 80% */
+  max-width: 573px;            /* трохи збільшено */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Збільшена картка */
+.card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 26px;              /* трохи більше відступів */
+  width: 100%;
+  max-width: 520px;           /* збільшено максимальну ширину */
+  box-sizing: border-box;
+}
+
+/* Заголовки обох карток — однаковий стиль */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;                  /* збільшено відступ між елементами */
+  margin-bottom: 18px;        /* трохи більше відступу знизу */
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 1.8rem;          /* збільшено розмір шрифту */
+  color: var(--primary-dark);
+  font-weight: 700;
+}
+
+/* Блок з іконкою профілю та іменем */
+.name-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;                  /* збільшено відступи між іконкою, ім'ям та кнопкою */
+  margin-bottom: 14px;
+}
+
+.name-block svg {
+  color: var(--primary);
+}
+
+.name {
+  font-size: 1.5rem;          /* збільшено розмір шрифту імені */
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--primary-dark);
+  transition: transform 0.2s, color 0.2s;
+}
+
+.icon-btn:hover {
+  transform: scale(1.1);
+  color: var(--primary);
+}
+
+/* Текстовий контент картки */
+.card-body p {
+  margin: 8px 0;              /* трохи збільшено відступи */
+  color: var(--text);
+  font-size: 1.1rem;          /* збільшено розмір шрифту */
+}
+
+/* Налаштування (друга картка) */
+.settings-card {
+  margin-top: 28px;           /* додано відступ зверху */
+}
+
+.settings-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;                  /* трохи більше простору між елементами */
+  font-size: 1.3rem;          /* збільшено розмір шрифту заголовка */
+  font-weight: 600;
+  color: var(--primary-dark);
+  margin-bottom: 14px;
+}
+
+.settings-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.settings-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;                  /* збільшено відступи між елементами списку */
+  padding: 14px;   
+  font-size: 18px;           /* трохи більше відступів всередині */
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  color: var(--text);
+}
+
+.settings-list li svg {
+  color: var(--primary);
+}
+
+.settings-list li:hover {
+  background-color: var(--light-bg);
+}
+
+.modal {
+  background: #fff;
+  padding: 24px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  animation: slideFadeIn 0.3s ease;
+  position: relative;
+}
+
+@keyframes slideFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal h3 {
+  margin-top: 0;
+  color: var(--primary-dark);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.modal input {
+  width: 100%;
+  padding: 10px;
+  margin: 12px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.modal-actions button:first-child {
+  background: rgba(81, 182, 135, 0.7);
+  color: #fff;
+  border: 1px solid rgba(81, 182, 135, 0.7);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+.modal-actions button:first-child:hover {
+  background: #51B687;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.modal-actions button:last-child {
+  background: #ffcccc;
+  color: #b30000;
+  border: 1px solid #ff4d4d;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+.modal-actions button:last-child:hover {
+  background: #ff4d4d;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+

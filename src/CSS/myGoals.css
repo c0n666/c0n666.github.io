@@ -1,0 +1,354 @@
+/* Навігаційне меню */
+.navigation-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 15px 40px; /* Збільшено горизонтальний відступ */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 40px; /* Заокруглення контейнера */
+  width: 100%;
+  max-width: 1000px; /* Збільшена максимальна ширина */
+  margin: 0 auto; /* Центрування меню */
+}
+
+/* Список навігації */
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: #296248;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none; /* Прибираємо підкреслення */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.nav-btn:hover {
+  background: linear-gradient(135deg, #296248, #B5E0C4); /* Градієнтний фон */
+  color: #fff; /* Контрастний білий колір тексту */
+  transform: translateY(-2px); /* Трохи піднімаємо елемент */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Додаємо легку тінь */
+}
+
+.my-goals-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.goals-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 800px;
+}
+
+.goals-header h1 {
+  font-size: 2rem;
+  color: #296248;
+  margin-right: 20px;
+}
+
+.create-goal-btn {
+  font-size: 1rem;
+  background: linear-gradient(135deg, #296248, #B5E0C4);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  gap: 2px; /* Зменшено простір між іконкою та текстом */
+  border-radius: 8px;
+}
+
+.create-goal-btn:hover {
+  background-color: #3C8A67;
+  transform: scale(1.05);
+}
+
+.create-goal-btn svg {
+  margin-right: 8px;
+}
+
+/* Empty State */
+.empty-state {
+  font-size: 1.2rem;
+  color: #ffffff;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Goals List */
+.goals-list {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.goal-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden; /* Щоб "шапочка" не виходила за межі */
+}
+
+/* Зелена шапочка зверху */
+.goal-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 8px;
+  width: 100%;
+  background: linear-gradient(135deg, #296248, #B5E0C4);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.goal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+.goal-card h3 {
+  font-size: 1.4rem;
+  color: #2D3C29;
+  margin-bottom: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.goal-card p {
+  font-size: 1rem;
+  color: #666666;
+  margin-bottom: 15px;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+
+.goal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.goal-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.status-btn,
+.delete-btn {
+  font-size: 22px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.status-btn {
+  color: #7CC5B0;
+}
+
+.delete-btn {
+  color: #E74C3C;
+}
+
+.status-btn:hover,
+.delete-btn:hover {
+  transform: scale(1.1);
+  /* фону не додаємо */
+}
+
+.status-btn:active,
+.delete-btn:active {
+  transform: scale(1.05);
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(38, 38, 38, 0.5); /* затемнення */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fade-in 0.3s ease;
+}
+
+.modal {
+  background-color: white;
+  padding: 25px 35px;
+  border-radius: 12px;
+  width: 420px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  animation: scale-in 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.modal h2 {
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+  color: #296248;
+  text-align: center;
+}
+
+.modal input {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.modal input:focus {
+  border-color: #51B687;
+  box-shadow: 0 0 4px rgba(81, 182, 135, 0.5);
+  outline: none;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-top: 12px;
+}
+
+.modal-actions button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  flex: 1;
+  margin: 0 6px;
+  transition: background-color 0.25s ease, transform 0.1s ease;
+}
+
+.modal-actions button:active {
+  transform: scale(0.98);
+}
+
+.modal-actions button.danger:active {
+  transform: scale(0.98);
+}
+
+.modal-label {
+  font-size: 0.95rem;
+  color: #296248;
+  margin: 6px 0 4px 10%;
+  align-self: flex-start;
+}
+
+.date-range {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 80%;
+  margin-bottom: 12px;
+}
+
+.date-range input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1.05rem;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.date-range input:focus {
+  border-color: #51B687;
+  box-shadow: 0 0 4px rgba(81, 182, 135, 0.5);
+  outline: none;
+}
+
+.date-separator {
+  font-size: 1.2rem;
+  color: #296248;
+}
+
+/* myGoals.css */
+
+.days-count {
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.days-count.danger {
+  color: #e74c3c; /* Red */
+}
+
+.days-count.warning {
+  color: #f39c12; /* Yellow */
+}
+
+.days-count.safe {
+  color: #51b687; /* Ocean Green */
+}
+
+
+/* Анімації */
+@keyframes scale-in {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

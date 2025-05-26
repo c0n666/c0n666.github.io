@@ -1,0 +1,21 @@
+
+footer {
+  background-color: #296248; /* Плантація */
+  color: #FFFFFF;
+  padding: 20px 0;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  margin-top: auto; /* Це дозволяє футеру завжди бути внизу */
+}
+
+footer p {
+  margin: 6px 0;
+  opacity: 0.9;
+}
+
+footer p#contact {
+  font-weight: 500;
+  color: #B5E0C4; /* Світліший акцент */
+}
